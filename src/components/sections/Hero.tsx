@@ -143,42 +143,37 @@ export default function Hero() {
               href="https://chat.whatsapp.com/H1dSxTMN2KO3XMfWGIzbEN"
               target="_blank"
               rel="noopener noreferrer"
-              className="relative group"
+              className="relative inline-block"
             >
-              {/* Animated gradient border with SVG */}
-              <svg className="absolute inset-0 w-full h-full" style={{ overflow: 'visible' }}>
-                <defs>
-                  <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#fbbf24">
-                      <animate attributeName="stop-color" values="#fbbf24;#3b82f6;#8b5cf6;#ec4899;#fbbf24" dur="3s" repeatCount="indefinite" />
-                    </stop>
-                    <stop offset="50%" stopColor="#3b82f6">
-                      <animate attributeName="stop-color" values="#3b82f6;#8b5cf6;#ec4899;#fbbf24;#3b82f6" dur="3s" repeatCount="indefinite" />
-                    </stop>
-                    <stop offset="100%" stopColor="#8b5cf6">
-                      <animate attributeName="stop-color" values="#8b5cf6;#ec4899;#fbbf24;#3b82f6;#8b5cf6" dur="3s" repeatCount="indefinite" />
-                    </stop>
-                  </linearGradient>
-                </defs>
+              {/* Animated border line */}
+              <svg 
+                className="absolute -inset-[2px] pointer-events-none" 
+                style={{ 
+                  width: 'calc(100% + 4px)',
+                  height: 'calc(100% + 4px)',
+                  overflow: 'visible' 
+                }}
+              >
                 <motion.rect
                   x="2"
                   y="2"
-                  rx="9999"
+                  width="calc(100% - 4px)"
+                  height="calc(100% - 4px)"
+                  rx="50"
+                  ry="50"
                   fill="none"
-                  stroke="url(#borderGradient)"
-                  strokeWidth="4"
-                  strokeDasharray="600"
-                  strokeDashoffset="600"
+                  stroke="#fbbf24"
+                  strokeWidth="3"
+                  strokeDasharray="1000"
+                  strokeDashoffset="1000"
                   style={{ 
-                    width: 'calc(100% - 4px)',
-                    height: 'calc(100% - 4px)',
-                    filter: 'drop-shadow(0 0 12px rgba(251, 191, 36, 0.6))'
+                    filter: 'drop-shadow(0 0 8px rgba(251, 191, 36, 0.5))'
                   }}
                   animate={{
-                    strokeDashoffset: [600, 0],
+                    strokeDashoffset: [1000, 0],
                   }}
                   transition={{
-                    duration: 2.5,
+                    duration: 3,
                     repeat: Infinity,
                     ease: "linear",
                   }}
@@ -187,7 +182,7 @@ export default function Hero() {
 
               {/* Subtle background glow */}
               <motion.div
-                className="absolute -inset-1 rounded-full opacity-20 blur-xl"
+                className="absolute -inset-1 rounded-full opacity-20 blur-xl pointer-events-none"
                 style={{
                   background: "radial-gradient(circle, rgba(251, 191, 36, 0.3), transparent)",
                 }}
@@ -212,9 +207,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Bottom Gradient Fade to white */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/50 to-transparent" />
     </section>
   );
 }

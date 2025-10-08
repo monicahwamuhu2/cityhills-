@@ -19,11 +19,33 @@ export const metadata: Metadata = {
   description: "A youth-led nonprofit committed to equipping youth with skills, mentorship, and opportunities to rise with courage, build businesses, and lead change.",
   keywords: ["youth empowerment", "nonprofit", "mentorship", "entrepreneurship", "tech education", "leadership development"],
   authors: [{ name: "CityHills Initiatives" }],
-  openGraph: {
-    title: "CityHills Initiatives",
-    description: "Empowering Youth, Transforming Communities",
-    type: "website",
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-icon.png',
+    shortcut: '/favicon.ico',
   },
+  openGraph: {
+    title: "CityHills Initiatives | Empowering Youth, Transforming Communities",
+    description: "A youth-led nonprofit committed to equipping youth with skills, mentorship, and opportunities to rise with courage, build businesses, and lead change.",
+    type: "website",
+    url: "https://cityhills.vercel.app/",
+    siteName: "CityHills Initiatives",
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'CityHills Initiatives - Empowering Youth, Transforming Communities',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "CityHills Initiatives | Empowering Youth, Transforming Communities",
+    description: "A youth-led nonprofit committed to equipping youth with skills, mentorship, and opportunities to rise with courage, build businesses, and lead change.",
+    images: ['/opengraph-image.png'],
+  },
+  metadataBase: new URL('https://cityhills.vercel.app/'),
 };
 
 export default function RootLayout({
