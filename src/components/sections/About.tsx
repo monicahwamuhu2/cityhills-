@@ -24,7 +24,7 @@ export default function About() {
         <AnimatedSection>
           <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="/assets/chi home page.png"
+              src="/assets/about.png"
               alt="CityHills team members"
               fill
               className="object-cover"
